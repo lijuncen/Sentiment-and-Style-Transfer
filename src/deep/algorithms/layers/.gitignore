@@ -1,0 +1,6 @@
+/__init__.pyc
+/logistic_sgd.pyc
+/mlp.pyc
+/rnnSentence.pyc
+/sentenceEmbeddingAverage.pyc
+/sentenceEmbeddingNN.pyc

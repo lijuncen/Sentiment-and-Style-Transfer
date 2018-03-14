@@ -1,0 +1,26 @@
+77431
+124462
+268853
+92677
+140753
+317882
+Traceback (most recent call last):
+  File "preprocess_train.py", line 108, in <module>
+    ed=levenshteinDistance(word_dict_i,style_word_array)
+  File "preprocess_train.py", line 19, in levenshteinDistance
+    distances_.append(1 + min((distances[i1], distances[i1 + 1], distances_[-1])))
+KeyboardInterrupt
+cat: ../yelp/sentiment.train.0.data.orgin: No such file or directory
+0
+tail: cannot open '../yelp/sentiment.train.0.data.orgin' for reading: No such file or directory
+head: cannot open '../yelp/sentiment.train.0.data.orgin' for reading: No such file or directory
+Traceback (most recent call last):
+  File "preprocess_train.py", line 37, in <module>
+    if(string.atof(lines[1])>dict_thre and num<dict_num):	
+KeyboardInterrupt
+cat: ../yelp/sentiment.train.1.data.orgin: No such file or directory
+0
+tail: cannot open '../yelp/sentiment.train.1.data.orgin' for reading: No such file or directory
+head: cannot open '../yelp/sentiment.train.1.data.orgin' for reading: No such file or directory
+mv: cannot stat '../yelp/train.data.orgin': No such file or directory
+mv: cannot stat '../yelp/test.data.orgin': No such file or directory

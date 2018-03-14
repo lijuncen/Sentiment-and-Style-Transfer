@@ -1,0 +1,15 @@
+import sys
+import string
+f=open(sys.argv[1],'r')
+fw=open(sys.argv[1]+'.final_result','w')
+tag=sys.argv[2]
+tmp_result=100
+tmp=''
+min_sen=''
+for line in f:
+	lines=line.strip().split('\t')
+	if(lines[2]=='self'):
+		continue
+	if(tmp!=lines[1]):
+		fw.write(lines[1]+'\t'+lines[-3]+'\t'+tag+'\n')
+	tmp=lines[1]
