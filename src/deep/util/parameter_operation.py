@@ -49,6 +49,7 @@ def save_confs_val(conf_dict, path):
     """
     Save the configuration of the model into disk.
     """
+    path = os.path.normpath(path)
     dirname = os.path.dirname(path)
     if not os.path.exists(dirname):
         os.makedirs(dirname)

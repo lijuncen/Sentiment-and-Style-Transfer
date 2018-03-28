@@ -25,10 +25,15 @@ To test a model, run the following command:
 ```bash
 sh run.sh test model_name data_name
 ```
+``` 
 
 Where model_name can be "DeleteOnly" or "DeleteAndRetrieve", data_name can be "yelp", "amazon" or "imagecaption". For example you want to reproduce the training process of DeleteOnly on Yelp review dataset, you can run the following command:
 ```bash
 sh run.sh train DeleteOnly yelp
+
+To configure GPU usage, set the [`THEANO_FLAGS`](http://deeplearning.net/software/theano/library/config.html) environment variable, e.g.
+```bash
+THEANO_FLAGS='device=cuda0,floatX=float32' sh run.sh train model_name data_name
  ```
 
 ## Dependencies
