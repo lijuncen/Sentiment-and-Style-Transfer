@@ -5,6 +5,12 @@ main_dict_num=$4
 main_dict_thre=$5
 main_dev_num=$6
 
+if [ "$main_data" = "amazon" ]; then
+  batch_size=64
+else
+  batch_size=256
+fi
+
 main_function_orgin=$main_function
 if [ "$main_function" = "DeleteOnly" ]; then
 main_function=label
@@ -79,7 +85,7 @@ eval $(awk 'BEGIN{printf "vaild_rate=%.6f",'$vaild_num'/'$line_num'}')
 eval $(awk 'BEGIN{printf "test_rate=%.6f",'$test_num'/'$line_num'}')
 
 #train process
-THEANO_FLAGS="${THEANO_FLAGS}" python src/main.py ../model $train_data_file $dict_data_file src/aux_data/stopword.txt src/aux_data/embedding.txt $train_rate $vaild_rate $test_rate ChoEncoderDecoderDT train
+THEANO_FLAGS="${THEANO_FLAGS}" python src/main.py ../model $train_data_file $dict_data_file src/aux_data/stopword.txt src/aux_data/embedding.txt $train_rate $vaild_rate $test_rate ChoEncoderDecoderDT train $batch_size
 
 elif [ "$main_operation" = "test" ]; then
 echo test
@@ -173,7 +179,7 @@ for((i=0;i<$main_category_num;i++))
 do
 	vaild_num=$i
 	eval $(awk 'BEGIN{printf "vaild_rate=%.10f",'$vaild_num'/'$line_num'}')
-	THEANO_FLAGS="${THEANO_FLAGS}" python src/main.py ../model ${train_file_prefix}${i}.lm ${train_file_prefix}${i}.lm.dict src/aux_data/stopword.txt src/aux_data/embedding.txt $train_rate $vaild_rate $test_rate ChoEncoderDecoderLm train
+	THEANO_FLAGS="${THEANO_FLAGS}" python src/main.py ../model ${train_file_prefix}${i}.lm ${train_file_prefix}${i}.lm.dict src/aux_data/stopword.txt src/aux_data/embedding.txt $train_rate $vaild_rate $test_rate ChoEncoderDecoderLm train $batch_size
 done
 vaild_num=0
 i=0
