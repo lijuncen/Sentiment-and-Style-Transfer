@@ -56,6 +56,8 @@ if __name__ == '__main__':
     elif algo_name == 'ChoEncoderDecoderDT' :
         if mode == 'train':
             batch_size = int(sys.argv[11])
+        elif mode in ('generate_emb', 'generate_b_v_t', 'generate_b_v_t_v'):
+            batch_size = int(sys.argv[12])
         else:
             batch_size = 256
         from deep.manage.model.cho_encoder_decoder_DT import RnnEncoderDecoder
@@ -64,6 +66,8 @@ if __name__ == '__main__':
     elif algo_name == 'ChoEncoderDecoderLm' :
         if mode == 'train':
             batch_size = int(sys.argv[11])
+        elif mode in ('generate_emb', 'generate_b_v_t', 'generate_b_v_t_v'):
+            batch_size = int(sys.argv[12])
         else:
             batch_size = 256
         from deep.manage.model.cho_encoder_decoder_lm import RnnEncoderDecoder
