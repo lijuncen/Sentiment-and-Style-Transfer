@@ -11,14 +11,14 @@ from deep.dataloader.corpus_reader_dialog_topic import CorpusReaderDialogTopic
 class RnnEncoderDecoder(ModelManager) :
     
     def __init__(self, dataset_folder, dataset_file, dict_file, stopwords_file, word_embedding_file,
-                 train_rate, valid_rate, test_rate, algo_name, charset, mode) :
+                 train_rate, valid_rate, test_rate, algo_name, charset, mode, batch_size) :
         """
         Need to set these attributes.
             1. conf_dict: configuration of the model.
             2. cr: CorpursReader for operate data.
             3. model: the network model.
         """
-        self.conf_dict = {'algo_name': algo_name, 'batch_size': 256,
+        self.conf_dict = {'algo_name': algo_name, 'batch_size': batch_size,
                           'train_valid_test_rate': [train_rate, valid_rate, test_rate],
                           'split_level': 'zi', 'pre_word_embedding': False,
                           'word_embedding_dim': 128, 'n_topics':5000, 'topic_embedding_dim' :256,'max_sentence_word_num': 150,

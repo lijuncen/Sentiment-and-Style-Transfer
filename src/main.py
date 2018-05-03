@@ -54,13 +54,25 @@ if __name__ == '__main__':
         manager = RnnEncoderDecoder(dataset_folder, dataset_file, dict_file, stopwords_file, word_embedding_file,
                                     train_rate, valid_rate, test_rate, algo_name, charset, mode)
     elif algo_name == 'ChoEncoderDecoderDT' :
+        if mode == 'train':
+            batch_size = int(sys.argv[11])
+        elif mode in ('generate_emb', 'generate_b_v_t', 'generate_b_v_t_v'):
+            batch_size = int(sys.argv[12])
+        else:
+            batch_size = 256
         from deep.manage.model.cho_encoder_decoder_DT import RnnEncoderDecoder
         manager = RnnEncoderDecoder(dataset_folder, dataset_file, dict_file, stopwords_file, word_embedding_file,
-                                    train_rate, valid_rate, test_rate, algo_name, charset, mode)
+                                    train_rate, valid_rate, test_rate, algo_name, charset, mode, batch_size)
     elif algo_name == 'ChoEncoderDecoderLm' :
+        if mode == 'train':
+            batch_size = int(sys.argv[11])
+        elif mode in ('generate_emb', 'generate_b_v_t', 'generate_b_v_t_v'):
+            batch_size = int(sys.argv[12])
+        else:
+            batch_size = 256
         from deep.manage.model.cho_encoder_decoder_lm import RnnEncoderDecoder
         manager = RnnEncoderDecoder(dataset_folder, dataset_file, dict_file, stopwords_file, word_embedding_file,
-                                    train_rate, valid_rate, test_rate, algo_name, charset, mode)
+                                    train_rate, valid_rate, test_rate, algo_name, charset, mode, batch_size)
     elif algo_name == 'TegEncoderDecoder' :
         from deep.manage.model.teg_encoder_decoder import RnnEncoderDecoder
         manager = RnnEncoderDecoder(dataset_folder, dataset_file, dict_file, stopwords_file, word_embedding_file,
