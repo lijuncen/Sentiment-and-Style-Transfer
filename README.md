@@ -6,6 +6,7 @@ NOTES:
 * The instructions below are still a work in progress.
 	* If you encounter any problems, please open a GitHub issue, or submit a pull request if you know the fix!
 * This is research code meant to serve as a reference implementation. We do not recommend heavily extending or modifying this codebase for other purposes.
+* The dataset is distributed under CC BY-SA 4.0 license. 
 
 If you have questions, please email Juncen Li at mlijuncenm at gmail.com.
 
