@@ -10,6 +10,8 @@ NOTES:
 
 If you have questions, please email Juncen Li at mlijuncenm at gmail.com.
 
+For those who are interested, Reid Pryzant has also released a [pytorch implementation](https://github.com/rpryzant/delete_retrieve_generate) of this paper.
+
 ## Data Format
 Please name the corpora of two styles by "x.0" and "x.1" respectively, and use "x" to refer to them in options. Each file should consist of one sentence per line with tokens separated by a space.
 * The <code>data/yelp/</code> directory contains Yelp review dataset ("x.0" is negative data and "x.1" is positive data).
