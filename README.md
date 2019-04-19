@@ -41,4 +41,4 @@ THEANO_FLAGS='device=cuda0,floatX=float32' sh run.sh train model_name data_name
 
 ## Dependencies
 Python == 2.7, Theano >=0.8 <br>
-Python requirement: numpy, scipy, nltk, whoosh
+Python requirement: numpy==1.15, scipy, nltk, whoosh
